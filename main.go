@@ -33,8 +33,10 @@ ApplicationLoop:
 		switch choice {
 		case 1:
 			if count == MAX_EXPENSES {
-
-			}
+				fmt.Println()
+				fmt.Println("Max. no. of expenses reached")
+				fmt.Println()
+			}else{
 
 			fmt.Println()
 			fmt.Print("Enter Expense Category: ")
@@ -46,11 +48,12 @@ ApplicationLoop:
 			if amounts[count] <= 0 {
 				fmt.Println("Amount must be > 0")
 				break
-			}
-
+			}else{
 			count++
 			fmt.Println()
 			fmt.Println("Expense added successfully")
+		}
+		}
 
 		case 2:
 			fmt.Println()
