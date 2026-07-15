@@ -9,20 +9,7 @@ func main() {
 
 	var categories [MAX_EXPENSES]string
 	var amounts [MAX_EXPENSES]float64
-	var count int = 4
-/*
-	categories[0] = "Food"
-	amounts[0] = 100.00
-
-	categories[1] = "Fuel"
-	amounts[1] = 300.00
-
-	categories[2] = "Movie"
-	amounts[2] = 200.00
-
-	categories[3] = "Hairdo"
-	amounts[3] = 20.00
-*/
+	var count int = 0
 
 	fmt.Println("==================================")
 	fmt.Println(appName)
@@ -33,15 +20,22 @@ func main() {
 	fmt.Println("Today's Expense")
 	fmt.Println()
 
+	var choice string = "N"
 
-	for i := 0; i < count; i++{
-		fmt.Println()
-
+	for{
 		fmt.Print("Enter Category    : ")
-		fmt.Scanln(&categories[i])
+		fmt.Scanln(&categories[count])
 
 		fmt.Print("Enter Amount      : ")
-		fmt.Scanln(&amounts[i])
+		fmt.Scanln(&amounts[count])
+		count++
+
+		fmt.Print("Add another expense? (Y/N): ")
+		fmt.Scanln(&choice)
+		
+		if choice == "N" || choice == "n"{
+			break
+		}
 
 	}
 
