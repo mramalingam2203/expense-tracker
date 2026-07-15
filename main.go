@@ -9,7 +9,7 @@ func main() {
 
 	var categories [MAX_EXPENSES]string
 	var amounts [MAX_EXPENSES]float64
-	var count int = 0
+	var count int = 4
 
 	categories[0] = "Food"
 	amounts[0] = 100.00
@@ -20,7 +20,8 @@ func main() {
 	categories[2] = "Movie"
 	amounts[2] = 200.00
 
-
+	categories[3] = "Hairdo"
+	amounts[3] = 20.00
 
 
 	fmt.Println("==================================")
@@ -31,28 +32,15 @@ func main() {
 
 	fmt.Println("Today's Expense")
 	fmt.Println()
-/*
-	fmt.Print("Enter Expense Category :")
-	fmt.Scanln(&category)
 
-	fmt.Print("Enter Expense Amount   :")
-	fmt.Scanln(&amount)
-	fmt.Println()
-*/
-	fmt.Println("Category :", categories[count])
-	fmt.Println("Amount   :", amounts[count])
-	fmt.Println()
-	count++
 
-	fmt.Println("Category :", categories[count])
-	fmt.Println("Amount   :", amounts[count])
-	fmt.Println()
-	count++
+	for i := 0; i < count; i++{
+		fmt.Println()
+		fmt.Println("Category :", categories[i])
+		fmt.Println("Amount   :", amounts[i])
+	}
 
-	fmt.Println("Category :", categories[count])
-	fmt.Println("Amount   :", amounts[count])
-	fmt.Println()
-	count++
+
 
 
 	fmt.Println("Project Started Successfully!")
