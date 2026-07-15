@@ -36,24 +36,24 @@ ApplicationLoop:
 				fmt.Println()
 				fmt.Println("Max. no. of expenses reached")
 				fmt.Println()
-			}else{
+			} else {
 
-			fmt.Println()
-			fmt.Print("Enter Expense Category: ")
-			fmt.Scanln(&categories[count])
+				fmt.Println()
+				fmt.Print("Enter Expense Category: ")
+				fmt.Scanln(&categories[count])
 
-			fmt.Print("Enter Expense Amount: ")
-			fmt.Scanln(&amounts[count])
+				fmt.Print("Enter Expense Amount: ")
+				fmt.Scanln(&amounts[count])
 
-			if amounts[count] <= 0 {
-				fmt.Println("Amount must be > 0")
-				break
-			}else{
-			count++
-			fmt.Println()
-			fmt.Println("Expense added successfully")
-		}
-		}
+				if amounts[count] <= 0 {
+					fmt.Println("Amount must be > 0")
+					break
+				} else {
+					count++
+					fmt.Println()
+					fmt.Println("Expense added successfully")
+				}
+			}
 
 		case 2:
 			fmt.Println()
@@ -78,6 +78,7 @@ ApplicationLoop:
 
 			if count == 0 {
 				fmt.Println("No expenses in record")
+				break
 			} else {
 				var total float64
 
