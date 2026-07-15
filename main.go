@@ -31,6 +31,8 @@ ApplicationLoop:
 			listExpense()
 		case 3:
 			showTotal()
+		case 4:
+			saveWelcomeFile()
 		case 0:
 			break ApplicationLoop
 
@@ -52,6 +54,7 @@ func showMenu(){
 			fmt.Println("1. Add Expense")
 			fmt.Println("2. List Expenses")
 			fmt.Println("3. Show Total")
+			fmt.Println("4. Save File")
 			fmt.Println("0. Exit")
 			fmt.Println()
 }
@@ -116,3 +119,24 @@ func showTotal(){
 		fmt.Printf("💲%.2f\n", total)
 		fmt.Println()
 	}
+
+
+func saveWelcomeFile(){
+
+	file, err := os.Create("expenses.txt")
+
+	if err != nil{
+		fmt.Println("Unable to create file")
+		return
+	}
+
+	fmt.Fprintln(file, "Personal Expense Tracker")
+	fmt.Fprintln(file, "Welcome!")
+	fmt.Fprintln(file, "This is my first file")
+
+	file.Close()
+
+	fmt.Println()
+
+
+}
