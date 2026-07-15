@@ -9,7 +9,7 @@ func main() {
 
 	var categories [MAX_EXPENSES]string
 	var amounts [MAX_EXPENSES]float64
-	//var count int
+	var count int = 0
 
 	categories[0] = "Food"
 	amounts[0] = 100.00
@@ -39,18 +39,20 @@ func main() {
 	fmt.Scanln(&amount)
 	fmt.Println()
 */
-	fmt.Println("Category :", categories[0])
-	fmt.Println("Amount   :", amounts[0])
+	fmt.Println("Category :", categories[count])
+	fmt.Println("Amount   :", amounts[count])
 	fmt.Println()
+	count++
 
-	fmt.Println("Category :", categories[1])
-	fmt.Println("Amount   :", amounts[1])
+	fmt.Println("Category :", categories[count])
+	fmt.Println("Amount   :", amounts[count])
 	fmt.Println()
+	count++
 
-	fmt.Println("Category :", categories[2])
-	fmt.Println("Amount   :", amounts[2])
+	fmt.Println("Category :", categories[count])
+	fmt.Println("Amount   :", amounts[count])
 	fmt.Println()
-
+	count++
 
 
 	fmt.Println("Project Started Successfully!")
