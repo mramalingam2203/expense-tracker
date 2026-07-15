@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+	"bufio"
+)
 
 const (
 	APP_NAME     = "Personal Expense Tracker"
@@ -33,6 +37,8 @@ ApplicationLoop:
 			showTotal()
 		case 4:
 			saveWelcomeFile()
+		case 5:
+			readWelcomeFile()
 		case 0:
 			break ApplicationLoop
 
@@ -55,6 +61,8 @@ func showMenu(){
 			fmt.Println("2. List Expenses")
 			fmt.Println("3. Show Total")
 			fmt.Println("4. Save File")
+			fmt.Println("5. Read File")
+
 			fmt.Println("0. Exit")
 			fmt.Println()
 }
@@ -138,5 +146,27 @@ func saveWelcomeFile(){
 
 	fmt.Println()
 
+}
 
+
+func readWelcomeFile(){
+
+	file, err := os.Open("expenses.txt")
+
+	if err != nil{
+		fmt.Println("Unable to create file")
+		return
+	}
+
+	scanner := bufio.NewScanner(file)
+
+	fmt.Println()
+	fmt.Println("Contents of expenses.txt")
+	fmt.Println("-------------------------")
+
+	for scanner.Scan(){
+		fmt.Println(scanner.Text())
+	}
+
+	file.Close()
 }
